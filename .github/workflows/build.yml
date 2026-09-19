@@ -19,15 +19,15 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Kita tentukan secara eksplisit menggunakan Gradle 8.4
-    - name: Setup Gradle 8.4
+    # Gunakan Gradle 8.13 (sesuai kebutuhan AGP 8.12.0)
+    - name: Setup Gradle 8.13
       uses: gradle/actions/setup-gradle@v4
       with:
-        gradle-version: '8.4'
+        gradle-version: '8.13'
 
-    # Buat wrapper khusus versi 8.4
+    # Buat wrapper dengan versi 8.13
     - name: Generate Gradle Wrapper
-      run: gradle wrapper --gradle-version 8.4
+      run: gradle wrapper --gradle-version 8.13
 
     - name: Make gradlew executable
       run: chmod +x gradlew
